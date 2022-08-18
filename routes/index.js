@@ -8,7 +8,7 @@ router.get('/:urlId', async (req, res) => {
     if (url) {
       url.clicks++;
       url.save();
-      return res.redirect(url.origUrl);
+      return res.json(url.origUrl);
     } else res.status(404).json('Not found');
   } catch (err) {
     console.log(err);
